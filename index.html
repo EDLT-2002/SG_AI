@@ -52,13 +52,16 @@
         .button-custom:hover {
             background-color: #3e8e41; /* Darker background on hover */
         }
-
         .button-custom:active {
             background-color: #3e8e41; /* Darker background when pressed */
             box-shadow: 0 2px #666; /* Reduce shadow */
             transform: translateY(2px); /* Move the button down */
         }
-
+        .button1-location{
+            position: fixed;
+            top: 600px;
+            left: 300px;
+        }
         /* Modal styles */
         .modal {
             display: none; 
@@ -115,7 +118,7 @@
     </header>
     <main>
         <section>
-            <button id="sample1" class="button-custom"> 
+            <button id="sample1" class="button-custom" class="button1_location"> 
                 Threat Detected Message
             </button>
             <div id="Threat_Detected" class="modal">
