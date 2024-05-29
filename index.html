@@ -98,7 +98,7 @@
     <header>
         <div class="center">
             <h1>
-                <span id="clock"></span>
+                <span id="clockHeader"></span>
             </h1>
             <br>
             <picture>
@@ -227,9 +227,11 @@
             </script>
         </section>
         <script type="text/javascript">
-                var clockElement = document.getElementById('clock');
-                function clock() {
-                    var options = {
+            var clockElementHeader = document.getElementById('clockHeader');
+            var clockElement1 = document.getElementById('clock1');
+            var clockElement2 = document.getElementById('clock2');
+            function clock() {
+                var options = {
                         weekday: 'long',
                         year: 'numeric',
                         month: 'long',
@@ -238,13 +240,15 @@
                         minute: '2-digit',
                         second: '2-digit',
                         timeZoneName: 'short'
-                    };
-                    var dateTimeString = new Date().toLocaleString('en-US', options);
-                    var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); 
-                    clockElement.textContent = dateTimeWithoutTimeZone;
-                }
-                setInterval(clock, 1000);
-            </script>
+                };
+                var dateTimeString = new Date().toLocaleString('en-US', options);
+                var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); 
+                clockElementHeader.textContent = dateTimeWithoutTimeZone;
+                clockElement1.textContent = dateTimeWithoutTimeZone;
+                clockElement2.textContent = dateTimeWithoutTimeZone;
+            }
+            setInterval(clock, 1000);
+        </script>
     </main>
     <footer>
         <p>&copy; 2024 SafeGuard AI</p>
