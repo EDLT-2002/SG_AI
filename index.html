@@ -101,10 +101,11 @@
                     function setTime(){
                         const now=new Date();
                         const currentDateandTime=now toLocaleString();
-                        document.querySelector('#datetime').textContent = currentDateTime;
+                        console.log(currentDateTime);
                     }
                     setInterval(setTime, 1000);
             </srcipt>
+            <br>
             <picture>
                 <source srcset="./Images/SGAI_LOGO.png">
                 <img aria-hidden="true" decoding= "async" src="./Images/SGAI_LOGO.png"
