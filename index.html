@@ -98,9 +98,12 @@
     <header>
         <div class="center">
             <srcipt>
-                    const currentTime=new Date();
-                    const currentDateandTime=now toLocaleString();
-                    console.log(currentDateandTime); <br>
+                    function setTime(){
+                        const now=new Date();
+                        const currentDateandTime=now toLocaleString();
+                        document.querySelector('#datetime').textContent = currentDateTime;
+                    }
+                    setInterval(setTime, 1000);
             </srcipt>
             <picture>
                 <source srcset="./Images/SGAI_LOGO.png">
