@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeGuard AI</title>
+    <style>
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: #333;
+            padding: 10px 20px;
+        }
+        header h1, footer p {
+            margin: 0;
+            color: white;
+        }
+        main {
+            background-color: #333;
+            padding: 20px;
+        }
+        h2 {
+            color: white;
+        }
+        p {
+            color: white;
+        }
+        .button-custom {
+            background-color: #8e8cff; /* Green background */
+            border: none; /* Remove borders */
+            color: white; /* White text */
+            padding: 15px 32px; /* Some padding */
+            text-align: center; /* Center the text */
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Make the button inline-block */
+            font-size: 16px; /* Increase font size */
+            margin: 4px 2px; /* Add some margin */
+            cursor: pointer; /* Pointer/hand icon */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 4px #999; /* Add shadow */
+        }
+        .button-custom:hover {
+            background-color: #3e8e41; /* Darker background on hover */
+        }
+
+        .button-custom:active {
+            background-color: #3e8e41; /* Darker background when pressed */
+            box-shadow: 0 2px #666; /* Reduce shadow */
+            transform: translateY(2px); /* Move the button down */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: black;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 500px; 
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center">
+            <picture>
+                <source srcset="Images/SGAI_LOGO.png">
+                <img aria-hidden="true" loading="lazy" decoding= "async" src="Images/SGAI_LOGO.png"
+                    alt="Logo" width="400" height="400">
+            </picture>
+            <h1>SafeGuard AI</h1>
+        </div>
+    </header>
+    <main>
+        <section>
+            <button id="sample1" class="button-custom"> 
+                Threat Detected Message
+            </button>
+            <div id="Threat_Detected" class="modal">
+                <div class="modal-content">
+                    <span id="close1" class="close">&times;</span>
+                    <h2>
+                        ALERT: Weapon Detection Notice
+                    </h2>
+                    <p>
+                        Our weapon detection system has identified a threat at the specified location. <br>
+                        <b>
+                            Details of Incident: <br>
+                        </b>
+                            Date and Time: <br>
+                            Location: Camera A <br>
+                            Camera Status: Active <br>
+                        <br>
+                            The police have been notified,
+                        <b>
+                            initiate lockdown. 
+                        </b>
+                    </p>
+                    <picture>
+                        <source srcset="Images/Sample_Gun_Image.png">
+                        <img aria-hidden="true" loading="lazy" decoding= "async" src="Images/Sample_Gun_Image.png"
+                            alt="Logo" width="500" height="333">
+                    </picture>
+                </div>
+            </div>
+    
+            <script> 
+                var button1 = document.getElementById('sample1');
+                var modal1 = document.getElementById('Threat_Detected');
+                var span1 = document.getElementById('close1');
+    
+                button1.addEventListener('click', function(){
+                    modal1.style.display = 'block';
+                });
+    
+                span1.addEventListener('click', function() {
+                    modal1.style.display = 'none';
+                });
+    
+                window.addEventListener('click', function(event) {
+                    if (event.target == modal1) {
+                        modal1.style.display = 'none';
+                    }
+                });
+            </script>
+        </section>
+        <section>
+            <button id="sample2" class="button-custom"> 
+                Possible Threat Detected Message
+            </button>
+            <div id="Potential_Threat" class="modal">
+                <div class="modal-content">
+                    <span id="close2" class="close">&times;</span>
+                    <h2>
+                        ALERT: Possible Weapon Detected
+                    </h2>
+                    <p>
+                        Our weapon detection system has identified a potential threat at the specified location. <br>
+                        <b>
+                            Details of Incident: <br>
+                        </b>
+                            Date and Time: <br>
+                            Location: Camera A <br>
+                            Camera Status: Active <br>
+                    </p>
+                    <picture>
+                        <source srcset="Images/Sample_Gun_Image.png">
+                        <img aria-hidden="true" loading="lazy" decoding= "async" src="Images/Sample_Gun_Image.png"
+                            alt="Logo" width="500" height="333">
+                    </picture>
+                    <button id="Threat" class="button-custom">
+                        This is a threat
+                    </button>
+                    <button id="Not a Threat" class="button-custom">
+                        This is not a threat
+                    </button>
+                </div>
+            </div>
+    
+            <script> 
+                var button2 = document.getElementById('sample2');
+                var modal2 = document.getElementById('Potential_Threat');
+                var span2 = document.getElementById('close2');
+                var threat = document.getElementById('Threat');
+                var noThreat = document.getElementById('Not a Threat');
+
+                threat.addEventListener('click', function(){
+                    modal2.style.display = 'none';
+                    modal1.style.display = 'block';        
+                });
+                noThreat.addEventListener('click', function(){
+                    modal2.style.display = 'none';
+                });
+                button2.addEventListener('click', function(){
+                    modal2.style.display = 'block';
+                });
+    
+                span2.addEventListener('click', function() {
+                    modal2.style.display = 'none';
+                });
+    
+                window.addEventListener('click', function(event) {
+                    if (event.target == modal2) {
+                        modal2.style.display = 'none';
+                    }
+                });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SafeGuard AI</p>
+    </footer>
+</body>
+</html>
