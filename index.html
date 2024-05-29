@@ -98,29 +98,9 @@
     <header>
         <div class="center">
             <h1>
-                <span id="clock">
-                    <br>
-                </span>
+                <span id="clock"></span>
             </h1>
-            <script type="text/javascript">
-                var clockElement = document.getElementById('clock');
-                function clock() {
-                    var options = {
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        second: '2-digit',
-                        timeZoneName: 'short'
-                    };
-                    var dateTimeString = new Date().toLocaleString('en-US', options);
-                    var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); // Remove timezone information
-                    clockElement.textContent = dateTimeWithoutTimeZone;
-                }
-                setInterval(clock, 1000);
-            </script>
+            <br>
             <picture>
                 <source srcset="./Images/SGAI_LOGO.png">
                 <img aria-hidden="true" decoding= "async" src="./Images/SGAI_LOGO.png"
@@ -145,7 +125,11 @@
                         <b>
                             Details of Incident: <br>
                         </b>
-                            Date and Time: <br>
+                            Date and Time: 
+                    </p>
+                            <span> id="clock"></span>
+                    <p>
+                        <br>
                             Location: Camera A <br>
                             Camera Status: Active <br>
                         <br>
@@ -197,7 +181,10 @@
                         <b>
                             Details of Incident: <br>
                         </b>
-                            Date and Time: <br>
+                            Date and Time: 
+                    </p>
+                            <span> id="clock"></span>
+                    <p>
                             Location: Camera A <br>
                             Camera Status: Active <br>
                     </p>
@@ -244,6 +231,25 @@
                 });
             </script>
         </section>
+        <script type="text/javascript">
+                var clockElement = document.getElementById('clock');
+                function clock() {
+                    var options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        timeZoneName: 'short'
+                    };
+                    var dateTimeString = new Date().toLocaleString('en-US', options);
+                    var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); // Remove timezone information
+                    clockElement.textContent = dateTimeWithoutTimeZone;
+                }
+                setInterval(clock, 1000);
+            </script>
     </main>
     <footer>
         <p>&copy; 2024 SafeGuard AI</p>
