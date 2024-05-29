@@ -244,9 +244,9 @@
                 var dateTimeString = new Date().toLocaleString('en-US', options);
                 var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); 
                 clockElementHeader.textContent = dateTimeWithoutTimeZone;
-                clockElement1.textContent = dateTimeWithoutTimeZone;
-                clockElement2.textContent = dateTimeWithoutTimeZone;
             }
+            clockElement1.textContent = dateTimeWithoutTimeZone;
+            clockElement2.textContent = dateTimeWithoutTimeZone;
             setInterval(updateClock, 1000);
         </script>
     </main>
