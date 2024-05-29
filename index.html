@@ -97,14 +97,16 @@
 <body>
     <header>
         <div class="center">
-            <srcipt>
-                    function setTime(){
-                        const now=new Date();
-                        const currentDateandTime=now toLocaleString();
-                        console.log(currentDateTime);
-                    }
-                    setInterval(setTime, 1000);
-            </srcipt>
+            <script type="text/javascript">
+                var clockElement = document.getElementById('clock');
+                function clock() {
+                clockElement.textContent = new Date().toString();
+                }
+                setInterval(clock, 1000);
+            </script>
+            <h2>
+                <span id="clock"></span>
+            </h2>
             <br>
             <picture>
                 <source srcset="./Images/SGAI_LOGO.png">
