@@ -230,6 +230,9 @@
             var clockElementHeader = document.getElementById('clockHeader');
             var clockElement1 = document.getElementById('clock1');
             var clockElement2 = document.getElementById('clock2');
+            var modal1Opened = false;
+            var modal2Opened = false;
+            
             function updateClock() {
                 var options = {
                         weekday: 'long',
@@ -244,6 +247,19 @@
                 var dateTimeString = new Date().toLocaleString('en-US', options);
                 var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); 
                 clockElementHeader.textContent = dateTimeWithoutTimeZone;
+            }
+            function updateClock1() {
+                if (!modal1Opened) {
+                    modal1Opened = true;
+                    updateClock(clockElement1);
+                }
+            }
+
+            function updateClock2() {
+                if (!modal2Opened) {
+                    modal2Opened = true;
+                    updateClock(clockElement2);
+                }
             }
             clockElement1.textContent = dateTimeWithoutTimeZone;
             clockElement2.textContent = dateTimeWithoutTimeZone;
