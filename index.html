@@ -230,7 +230,7 @@
             var clockElementHeader = document.getElementById('clockHeader');
             var clockElement1 = document.getElementById('clock1');
             var clockElement2 = document.getElementById('clock2');
-            function clock() {
+            function updateClock() {
                 var options = {
                         weekday: 'long',
                         year: 'numeric',
@@ -247,7 +247,7 @@
                 clockElement1.textContent = dateTimeWithoutTimeZone;
                 clockElement2.textContent = dateTimeWithoutTimeZone;
             }
-            setInterval(clock, 1000);
+            setInterval(updateClock, 1000);
         </script>
     </main>
     <footer>
