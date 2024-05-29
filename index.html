@@ -240,7 +240,7 @@
                         timeZoneName: 'short'
                     };
                     var dateTimeString = new Date().toLocaleString('en-US', options);
-                    var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); // Remove timezone information
+                    var dateTimeWithoutTimeZone = dateTimeString.replace(/GMT-\d{4}\s\((.*?)\)/, ''); 
                     clockElement.textContent = dateTimeWithoutTimeZone;
                 }
                 setInterval(clock, 1000);
